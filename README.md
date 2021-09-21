@@ -131,6 +131,12 @@ to check which ports are open
 sudo lsof -nP -i | grep LISTEN
 ```
 
+before connecting from the "real" computer to virtual box, we must enable the 4242 port in virtualbox
+```
+settings->network->port forwarding. guest and host port 4242. host ip 127.0.0.1
 ```
 
+to check which users are currently connected to server
+```
+who -a
 ```
