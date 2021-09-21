@@ -30,3 +30,18 @@ to check if albgarci is in user42 group
 getent group | grep user42
 groups albgarci
 ```
+
+to create a new user
+```
+sudo adduser testinguser
+```
+
+to assign that user to a group
+```
+adduser probandouser user42
+```
+
+to delete a specific user
+```
+sudo deluser probandouser
+```
