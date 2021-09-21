@@ -37,7 +37,7 @@ add: minlen=10
 
 so it's something like this:
 ```
-password        requisite                       pam_deny.so minlen=10 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3
+password        requisite                       pam_deny.so minlen=10 ucredit=-1 dcredit=-1
 ```
 
 • The password must not include the name of the user.
