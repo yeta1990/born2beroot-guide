@@ -21,10 +21,24 @@ PASS_MIN_DAYS    0
 PASS_WARN_AGE   7
 ```
 
+```
+vi /etc/pam.d/common-password
+```
 • Your password must be at least 10 characters long. It must contain an uppercase
 letter and a number. Also, it must not contain more than 3 consecutive identical
 characters.
 
+in this line:
+```
+password        requisite                       pam_deny.so minlen=10
+```
+
+add: minlen=10
+
+so it's something like this:
+```
+password        requisite                       pam_deny.so minlen=10 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3
+```
 
 • The password must not include the name of the user.
 ```
