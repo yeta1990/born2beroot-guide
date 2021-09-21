@@ -112,13 +112,25 @@ https://dev.to/delightfullynerdy/bash-ufw-command-not-found-ubuntu-18-04-1agh
 ```
 sudo apt-get install ufw
 ```
-
+typing...
 ```
 sudo ufw status
 ```
+we can't see any allowed port
 
+but enabling ufw and allowing a specific port:
 ```
 sudo ufw enable
+sudo ufw allow 4242/tcp 
 sudo ufw status
 ```
+4242 port is now enabled
 
+to check which ports are open
+```
+sudo lsof -nP -i | grep LISTEN
+```
+
+```
+
+```
