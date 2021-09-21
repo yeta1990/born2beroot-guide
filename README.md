@@ -173,3 +173,11 @@ hostname
 vi /etc/hosts
 ```
 and edit the line 127.0.1.1 to the correct one
+
+
+##differences between apparmor and selinux
+[Stackexhange](https://security.stackexchange.com/questions/29378/comparison-between-apparmor-and-selinux)
+[Other](https://www.sololinux.es/apparmor-vs-selinux/)
+
+
+
