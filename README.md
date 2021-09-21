@@ -45,3 +45,28 @@ to delete a specific user
 ```
 sudo deluser probandouser
 ```
+
+
+##ssh
+
+https://linuxhint.com/enable-ssh-server-debian/
+
+```
+sudo systemctl status ssh
+```
+it's currently working on port 22
+
+to change ssh port from 22 to 4242:
+```
+find / -name "sshd_config"
+```
+
+edit config file
+```
+sudo vi /etc/ssh/sshd_config
+```
+
+change on line 15
+```
+#Port 22 to Port 4242
+```
