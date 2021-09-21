@@ -174,6 +174,11 @@ vi /etc/hosts
 ```
 and edit the line 127.0.1.1 to the correct one
 
+3. after panicking for 2 hours, i've found that it's also necessary to change the /etc/hostname file
+```
+vi /etc/hostname
+```
+and replacing the name for the one you chose
 
 ##differences between apparmor and selinux
 [Stackexhange](https://security.stackexchange.com/questions/29378/comparison-between-apparmor-and-selinux)
