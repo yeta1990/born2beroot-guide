@@ -25,7 +25,7 @@ groupadd user42
 ```
 adduser albgarci user42
 ```
-to check if albgarci is in 
+to check if albgarci is in user42 group
 ```
 getent group | grep user42
 groups albgarci
