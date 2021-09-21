@@ -136,6 +136,11 @@ before connecting from the "real" computer to virtual box, we must enable the 42
 settings->network->port forwarding. guest and host port 4242. host ip 127.0.0.1
 ```
 
+connect from "real" to virtual
+```
+ssh albgarci@localhost -p 4242
+```
+
 to check which users are currently connected to server
 ```
 who -a
