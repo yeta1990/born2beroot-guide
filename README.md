@@ -145,3 +145,31 @@ to check which users are currently connected to server
 ```
 who -a
 ```
+
+
+##change hostname
+
+two steps:
+1. change hostname
+```
+hostname [newname]
+```
+for example
+```
+hostname albgarci42
+```
+or 
+```
+hostname server2
+```
+
+check it with 
+```
+hostname
+```
+
+2. change /etc/hosts
+```
+vi /etc/hosts
+```
+and edit the line 127.0.1.1 to the correct one
