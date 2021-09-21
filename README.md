@@ -105,3 +105,20 @@ disable ssh connections to root user: vi edit /etc/ssh/sshd_config, check that "
 PermitRootLogin no
 ```
 
+
+##firewall setup
+https://dev.to/delightfullynerdy/bash-ufw-command-not-found-ubuntu-18-04-1agh
+
+```
+sudo apt-get install ufw
+```
+
+```
+sudo ufw status
+```
+
+```
+sudo ufw enable
+sudo ufw status
+```
+
