@@ -78,6 +78,11 @@ sudo systemctl stop ssh
 sudo systemctl start ssh
 ```
 
+or 
+```
+service ssh restart
+```
+
 to check if ssh is running on port 4242
 ```
 ss -tulpn | grep 4242
@@ -94,3 +99,9 @@ and confirm that port 22 isn't serving ssh
 ```
 ss -tulpn | grep 22
 ```
+
+disable ssh connections to root user: vi edit /etc/ssh/sshd_config, check that "PermitRootLogin" is disabled (line 34) or commented, and add:
+```
+PermitRootLogin no
+```
+
