@@ -46,7 +46,6 @@ to delete a specific user
 sudo deluser probandouser
 ```
 
-
 ##ssh
 
 https://linuxhint.com/enable-ssh-server-debian/
@@ -54,6 +53,8 @@ https://linuxhint.com/enable-ssh-server-debian/
 ```
 sudo systemctl status ssh
 ```
+
+
 it's currently working on port 22
 
 to change ssh port from 22 to 4242:
@@ -69,4 +70,27 @@ sudo vi /etc/ssh/sshd_config
 change on line 15
 ```
 #Port 22 to Port 4242
+```
+
+now we have to restart the ssh server
+```
+sudo systemctl stop ssh
+sudo systemctl start ssh
+```
+
+to check if ssh is running on port 4242
+```
+ss -tulpn | grep 4242
+``` 
+
+or 
+```
+sudo systemctl status ssh
+```
+
+and confirm that port 22 isn't serving ssh
+
+
+```
+ss -tulpn | grep 22
 ```
