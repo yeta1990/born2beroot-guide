@@ -18,7 +18,7 @@ PASS_MAX_DAYS    30
 • The minimum number of days allowed before the modification of a password will
 be set to 2.
 ```
-PASS_MIN_DAYS    0
+PASS_MIN_DAYS    2
 ```
 
 • The user has to receive a warning message 7 days before their password expires.
@@ -26,12 +26,29 @@ PASS_MIN_DAYS    0
 PASS_WARN_AGE   7
 ```
 
+but all this attributes aren't enough to apply this policy to root and sudo group members, as we can see if execute: 
 ```
-vi /etc/pam.d/common-password
+sudo chage -l albgarci
 ```
-• Your password must be at least 10 characters long. It must contain an uppercase
-letter and a number. Also, it must not contain more than 3 consecutive identical
-characters.
+or 
+
+```
+sudo chage -l root
+```
+
+so we must apply this to root and sudo users:
+
+```
+sudo chage -M 30 root
+sudo chage -m 2 root
+```
+
+
+
+The next rules are defined in /etc/pam.d/common-password
+```
+nano /etc/pam.d/common-password
+```
 
 in this line:
 ```
@@ -42,16 +59,9 @@ add: minlen=10
 
 so it's something like this:
 ```
-password        requisite                       pam_deny.so minlen=10 ucredit=-1 dcredit=-1
+password        requisite                       pam_pwquality.so minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username enforce_for_root difok=7 
 ```
 
-• The password must not include the name of the user.
-```
-usercheck = 1
-```
-• The following rule does not apply to the root password: The password must have
-at least 7 characters that are not part of the former password.
-• Of course, your root password has to comply with this policy.
 
 
 Other commands able to apply in /etc/pam.d/common-password
