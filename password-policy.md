@@ -62,7 +62,19 @@ so it's something like this:
 password        requisite                       pam_pwquality.so minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username enforce_for_root difok=7 
 ```
 
+Another rule is necessary to guarantee that users with empty passwords (null passwords) aren't allowed to login.
+Giving the case a root or sudo user writes this:
 
+```
+sudo passwd -d [user]
+```
+
+from that moment it's possible to login (inside the VM, not from ssh) simply leaving the password field empty.
+so, to prevent this, just remove from /etc/pam.d/common-auth the word:
+
+```
+nullok
+```
 
 Other commands able to apply in /etc/pam.d/common-password
 ```
