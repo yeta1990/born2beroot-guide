@@ -2,12 +2,22 @@
 
 cron job ->
 
+![alt](https://github.com/yeta1990/born2beroot-guide/blob/main/Screen%20Shot%202021-09-22%20at%207.57.22%20PM.png?raw=true)
 
 monitoring.sh
 • The architecture of your operating system and its kernel version.
+```
+uname -a
+```
 
 • The number of physical processors.
+```
+lscpu
+```
+
 • The number of virtual processors.
+
+
 • The current available RAM on your server and its utilization rate as a percentage.
 • The current available memory on your server and its utilization rate as a percentage.
 • The current utilization rate of your processors as a percentage.
