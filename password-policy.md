@@ -1,3 +1,8 @@
+#Password policy
+
+###Before starting: [Debian Guide](https://www.debian.org/doc/manuals/securing-debian-manual/ch04s11.es.html)
+
+
 https://www.2daygeek.com/how-to-set-password-complexity-policy-on-linux/
 
 ```
