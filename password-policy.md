@@ -39,8 +39,8 @@ sudo chage -l root
 so we must apply this to root and sudo users:
 
 ```
-sudo chage -M 30 root
-sudo chage -m 2 root
+sudo chage -M 30 [user]
+sudo chage -m 2 [user]
 ```
 
 
