@@ -17,12 +17,24 @@ used_space=$(df -BM | grep root | grep -o '\([0-9]*\)' | sed -n 2p)
 total_space=$(df -BG | grep root | grep -o '\([0-9]*\)' | sed -n 1p)
 space_perc=$(df -BM | grep root | grep -o '\([0-9]*%\)')
 echo "#Disk Usage: $used_space/${total_space}Gb ($space_perc)"
-load=$(top -n 1 -b | sed -n '8,$'p | cut -c -54 | cut -c 51- | awk 'BEGIN { sum=0 } { sum+=$1 } END {print sum }')
+load=$(top -n 1 -b | sed -n '8,$'p | cut -c -54 | cut -c 51- | awk 'BEGIN { sum=0 } { sum+=$1 } END {print>
 echo "#CPU load: ${load}%"
-echo "#Last boot: "
-echo "#LVM use: "
-echo "#Connexions TCP : "
-echo "#User log:"
-echo "#Network: "
-echo -n "#Sudo: "
-#sudo cat /var/log/sudo/sudo_logs | grep "COMMAND" | wc -l
+last_boot=$(who -b | tail -c 17)
+echo "#Last boot: $last_boot"
+echo -n "#LVM use: "
+if grep -q mapper /etc/fstab
+        then
+                echo 1
+        else
+                echo 0
+fi
+conn=$(ss -s | grep -o 'estab [0-9]*' | sed -E "s/^estab //")
+echo "#Connexions TCP : $conn ESTABLISHED"
+echo -n "#User log: "
+who | wc -l
+server_ip=$(ip a | grep inet | grep global | sed -E "s/    inet //" | sed -E "s/\/(.)*//")
+server_mac=$(ip a | grep link/ether | sed -E "s/    link\/ether //" | head -c 17)
+echo "#Network: IP $server_ip ($server_mac)"
+echo -n "#Sudo : "
+num_comms=$(cat /var/log/sudo/sudo_logs | grep "COMMAND" | wc -l)
+echo "$num_comms cmd"
