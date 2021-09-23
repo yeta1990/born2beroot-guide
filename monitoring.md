@@ -36,3 +36,9 @@ https://bl831.als.lbl.gov/~gmeigs/scripting_help/printf_awk_notes.txt
 • The number of users using the server.
 • The IPv4 address of your server and its MAC (Media Access Control) address.
 • The number of commands executed with the sudo program.
+
+cron
+
+
+* * * * * bash jkasdfjkalsñ | wall
+
