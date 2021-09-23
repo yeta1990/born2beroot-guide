@@ -16,10 +16,19 @@ lscpu
 ```
 
 • The number of virtual processors.
+```
+nproc
+```
 
+util:
+
+https://bl831.als.lbl.gov/~gmeigs/scripting_help/printf_awk_notes.txt
 
 • The current available RAM on your server and its utilization rate as a percentage.
+
 • The current available memory on your server and its utilization rate as a percentage.
+
+
 • The current utilization rate of your processors as a percentage.
 • The date and time of the last reboot.
 • Whether LVM is active or not.
