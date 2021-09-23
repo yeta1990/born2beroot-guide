@@ -17,7 +17,8 @@ used_space=$(df -BM | grep root | grep -o '\([0-9]*\)' | sed -n 2p)
 total_space=$(df -BG | grep root | grep -o '\([0-9]*\)' | sed -n 1p)
 space_perc=$(df -BM | grep root | grep -o '\([0-9]*%\)')
 echo "#Disk Usage: $used_space/${total_space}Gb ($space_perc)"
-echo "#CPU load: "
+load=$(top -n 1 -b | sed -n '8,$'p | cut -c -54 | cut -c 51- | awk 'BEGIN { sum=0 } { sum+=$1 } END {print sum }')
+echo "#CPU load: ${load}%"
 echo "#Last boot: "
 echo "#LVM use: "
 echo "#Connexions TCP : "
