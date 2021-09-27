@@ -100,12 +100,12 @@ crontab -e
 setup new cronjob, using 'wall' to broadcast the message:
 each minute
 ```
-* * * * * bash /home/albgarci/monitoring.sh
+* * * * * bash /home/albgarci/monitoring.sh | wall -t 5
 ```
 
 each 10 minutes:
 ```
-*/10 * * * * bash /home/albgarci/monitoring.sh
+*/10 * * * * bash /home/albgarci/monitoring.sh | wall -t 5
 ```
 
 
