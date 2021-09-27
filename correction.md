@@ -1,13 +1,14 @@
 
 Sources:
+https://1gbits.com/blog/debian-vs-centos/
 https://serverfault.com/questions/396079/differences-between-debian-and-centos-from-a-web-server-prospective
-
-
+https://www.educba.com/centos-vs-debian/
 
 ## Basic differences between Centos and Debian
 
-### Origin
-Debian is being developed by an association of individuals who have made common cause to create a free operating system. 
+### Origin and nature
+Debian is a Unix like computer operating system that is made up of open source components, being developed by a group of individuals who have made common cause to create a free operating system. 
+CentOS is a distribution from Red Hat Linux. 
 
 ### Space of default install
 CentOS default install is heavier than Debian?
@@ -23,20 +24,149 @@ Both support x86_64/AMD64 archs, but they also support different archictetures.
 - Debian: DEB package format. dpkg/APT package manager.
 
 ### "Enterprise" status
-It seems like CentOS is more enterprise-status considered than Debian. 
+It seems like CentOS is more enterprise-status considered than Debian because its compared stability, its large community, its long time support (see release cycle) and its long development and testing cycle. Consequently, the most popular distribution when it comes to server environments.
 
 ### Kernel and hardware
 CentOS ships with kernel 3.10 or 4.18. Debian support newest hardware and kernel features, by 
 
 ### Upgrading and release cycle
-CentOS doesn't support major version upgrades. CentOS major releases typically have a 10-year lifespan. 
-Debian typically releases a new major version on a 2 year release cycle with 3 years of full support and an addition 2 years of LTS (Long Term Support) for a 5-year lifespan. 
+- CentOS doesn't support major version upgrades. CentOS major releases typically have a 10-year lifespan. After a major release, CentOS code is frozen and is never changed except for security. This makes some issues while working with it as the next update usually happen after 5 years and many application software changes in this duration. For example, CentOS 5 supports MySQL 5.1 only where as there are newer version of MySQL available which CentOS does not support. 
+- Debian typically releases a new major version on a 2 year release cycle with 3 years of full support and an addition 2 years of LTS (Long Term Support) for a 5-year lifespan.
+- Debian have more up-do-date packages. On the other hand, CentOS is considered more stable than Debian because its low update frequency. 
 
 ### Support
-CentOS commercial support is not provided directly from the CentOS project, but is availlable through 3rd parties, such as OpenLogic.
+CentOS is supported by Red Hat community.  CentOS commercial support is not provided directly from the CentOS project, but is availlable through 3rd parties, such as OpenLogic.
 Debian is primarily community supported, but also a list of consultants is offered
 
-### Bug tracking
+### Web hosting
+- If a server is going to be used as a reseller tool, he/she may want to install a tool called cPanel, and in such a case going with CentOS is recommended, as it is officially supported.
+
+
+
+## Interest of Virtual Machines
+https://itsupportguys.com/it-blog/business-benefits-of-virtual-machines-and-virtualization/
+
+## APT vs aptitude
+APT is "Advanced Package Tool", package manager. 
+Aptitude is a front-end or an interface of apt. Makes easier to manage conflicts than APT, to access to information. 
+
+
+
+## Checks
+### UFW service is started?
+```
+sudo ufw status
+```
+
+### SSH service is started?
+```
+sudo systemctl status ssh
+```
+
+```
+hostnamectl
+```
+
+
+### Check user with login username is created and belongs to user42 and sudo groups
+```
+getent group | grep sudo
+getent group | grep user42
+```
+
+### Check password policies
+files:
+
+
+users:
+```
+sudo chage -l [username] 
+```
+
+### Create a new user
+```
+
+```
+
+### Change hostname, reboot and check if it has changed, then return it to the original one
+```
+
+```
+
+
+### View partitions for this virtual machine
+
+
+### How LVM works and what it is all about. 
+
+
+
+## Sudo
+
+### Check if sudo is installed
+
+
+### Asign the new user to the "sudo" group
+
+
+### Check content of sudo logs
+```
+cat /var/log/sudo/whatever
+```
+
+### Try to run a command via sudo and see if the sudo log has been updated
+
+
+## UFW
+### Check that UFW program is properly installed on the VM and it's working properly
+
+
+### What UFW is and the value of using it.
+
+
+### List active rules in UFW. A rule must exist for port 4242.
+
+
+### Add a new rule to open port 8080
+
+### CHeck that this one has been added by listing the active rules.
+
+### Delete the new rule
+
+
+## SSH
+### Check that SSH service is properly installed on the virtual machine
+
+
+### Check that it's working properly
+
+
+### What is SSH and the value of using it. 
+
+
+### Verify that SSH service only uses port 4242
+
+### Try to log in with the newly created user
+
+### Try to log in as root. It must fail. 
+
+
+
+## Script monitoring
+### Explain the operation of its script by displaying its code
+
+### What is cron
+
+### How is the script set up so that it runs every 10 minutes. Check crontab
+```
+
+```
+
+### Change the rule to make the script stop running when the server starts up. Reboot and check that all is ok
+```
+sudo crontab -e
+```
+
 
 
 
