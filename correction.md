@@ -63,6 +63,7 @@ sudo ufw status
 sudo systemctl status ssh
 ```
 
+### Installed OS
 ```
 hostnamectl
 ```
@@ -75,8 +76,16 @@ getent group | grep user42
 ```
 
 ### Check password policies
-files:
 
+pwquality: 
+```
+dpkg -l | grep libpam-pwquality
+```
+
+config files:
+```
+sudo cat /etc/pam.d/common-password
+```
 
 users:
 ```
@@ -85,71 +94,82 @@ sudo chage -l [username]
 
 ### Create a new user
 ```
-
+sudo adduser [username]
 ```
 
 ### Change hostname, reboot and check if it has changed, then return it to the original one
 ```
-
+hostname [newname]
 ```
 
-
 ### View partitions for this virtual machine
-
+```
+lsblk
+```
 
 ### How LVM works and what it is all about. 
-
-
+```
+```
 
 ## Sudo
 
 ### Check if sudo is installed
-
+```
+dpkg -l | grep sudo
+```
 
 ### Asign the new user to the "sudo" group
+```
+adduser [username] sudo
+```
 
-
-### Check content of sudo logs
+### Check content of sudo logs, try to run a command via sudo and see if the sudo log has been updated
 ```
 cat /var/log/sudo/whatever
 ```
 
-### Try to run a command via sudo and see if the sudo log has been updated
-
-
 ## UFW
-### Check that UFW program is properly installed on the VM and it's working properly
-
+### Check that UFW program is properly installed on the VM and it's working properly. List active rules in UFW. A rule must exist for port 4242.
+```
+dpkg -l | grep ufw
+sudo systemctl status ufw
+sudo ufw status
+```
 
 ### What UFW is and the value of using it.
 
-
-### List active rules in UFW. A rule must exist for port 4242.
-
-
 ### Add a new rule to open port 8080
+```
+sudo ufw allow 8080
+```
 
-### CHeck that this one has been added by listing the active rules.
+### Check that this one has been added by listing the active rules.
+```
+sudo ufw status
+```
 
 ### Delete the new rule
-
+```
+sudo ufw status numbered
+sudo ufw delete [number]
+```
 
 ## SSH
 ### Check that SSH service is properly installed on the virtual machine
+```
+dpkg -l | grep ssh
+```
 
-
-### Check that it's working properly
-
+### Check that it's working properly and that SSH service only uses port 4242
+```
+sudo systemctl status ssh
+```
 
 ### What is SSH and the value of using it. 
-
-
-### Verify that SSH service only uses port 4242
 
 ### Try to log in with the newly created user
 
 ### Try to log in as root. It must fail. 
-
 
 
 ## Script monitoring
@@ -159,14 +179,13 @@ cat /var/log/sudo/whatever
 
 ### How is the script set up so that it runs every 10 minutes. Check crontab
 ```
-
+*/10 * * * * 
+minute, hour, day(month), month, day(week)
 ```
 
 ### Change the rule to make the script stop running when the server starts up. Reboot and check that all is ok
 ```
 sudo crontab -e
 ```
-
-
 
 
