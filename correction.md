@@ -101,7 +101,8 @@ sudo adduser [username]
 
 ### Change hostname, reboot and check if it has changed, then return it to the original one
 ```
-hostname [newname]
+sudo vi /etc/hosts
+sudo vi /etc/hostname
 ```
 
 ### View partitions for this virtual machine
