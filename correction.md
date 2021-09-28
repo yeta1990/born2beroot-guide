@@ -84,6 +84,7 @@ dpkg -l | grep libpam-pwquality
 
 config files:
 ```
+cat /etc/login.defs
 sudo cat /etc/pam.d/common-password
 ```
 
