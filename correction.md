@@ -130,6 +130,10 @@ adduser [username] sudo
 cat /var/log/sudo/whatever
 ```
 
+```
+sudo sudoreplay 00004Q -d /var/log/sudo
+```
+
 ## UFW
 ### Check that UFW program is properly installed on the VM and it's working properly. List active rules in UFW. A rule must exist for port 4242.
 ```
