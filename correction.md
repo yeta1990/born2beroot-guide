@@ -3,6 +3,7 @@ Sources:
 https://1gbits.com/blog/debian-vs-centos/
 https://serverfault.com/questions/396079/differences-between-debian-and-centos-from-a-web-server-prospective
 https://www.educba.com/centos-vs-debian/
+https://en.wikipedia.org/wiki/AppArmor
 
 ## Basic differences between Centos and Debian
 
@@ -47,10 +48,11 @@ Debian is primarily community supported, but also a list of consultants is offer
 https://itsupportguys.com/it-blog/business-benefits-of-virtual-machines-and-virtualization/
 
 ## APT vs aptitude
-APT is "Advanced Package Tool", package manager. 
-Aptitude is a front-end or an interface of apt. Makes easier to manage conflicts than APT, to access to information. 
+APT is "Advanced Package Tool", package manager.
+Aptitude is a front-end or an interface of apt. Makes easier to manage conflicts than APT, to access to information.
 
-
+## What is AppArmor
+Is a linux kernel security module that allows the system administrator to restrict programs' capabilities with per-program profiles.
 
 ## Checks
 ### UFW service is started?
@@ -67,7 +69,6 @@ sudo systemctl status ssh
 ```
 hostnamectl
 ```
-
 
 ### Check user with login username is created and belongs to user42 and sudo groups
 ```
