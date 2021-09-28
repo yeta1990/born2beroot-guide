@@ -4,6 +4,8 @@ https://1gbits.com/blog/debian-vs-centos/
 https://serverfault.com/questions/396079/differences-between-debian-and-centos-from-a-web-server-prospective
 https://www.educba.com/centos-vs-debian/
 https://en.wikipedia.org/wiki/AppArmor
+https://wiki.ubuntu.com/Lvm
+
 
 ## Basic differences between Centos and Debian
 
@@ -42,6 +44,20 @@ Debian is primarily community supported, but also a list of consultants is offer
 ### Web hosting
 - If a server is going to be used as a reseller tool, he/she may want to install a tool called cPanel, and in such a case going with CentOS is recommended, as it is officially supported.
 
+### What is LVM
+LVM stands for Logical Volume Management. It is a system of managing logical volumes, or filesystems, that is much more advanced and flexible than the traditional method of partitioning a disk into one or more segments and formatting that partition with a filesystem.
+
+*Resizing*
+With gparted you can expand and shrink partitions, but only if they are not in use. LVM can expand a partition while it is mounted, if the filesystem used on it also supports that ( like the usual ext3/4 ). When expanding a partition, gparted can only expand it into adjacent free space, but LVM can use free space anywhere in the Volume Group, even on another disk
+
+*Moving Partitions*
+LVM can move a partition while it is in use, and will not corrupt your data if it is interrupted. In the event that your system crashes or loses power during the move, you can simply restart it after rebooting and it will finish normally.
+
+*Many Partitions*
+With LVM you can create as many Logical Volumes as you wish, and it is usually quite easy since you usually have plenty of free space left. 
+
+*Snapshots*
+This is something you simply can not do without LVM. It allows you to freeze an existing Logical Volume in time, at any moment, even while the system is running. 
 
 
 ## Interest of Virtual Machines
