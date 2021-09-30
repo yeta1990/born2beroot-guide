@@ -3,6 +3,7 @@
 ## Disclaimer: 
 - Although I've passed this project, it could be possible that some config or info is wrong.
 - After writing the attached documents, I haven't hardly checked them, so be careful using the commands and read carefully the subject.
+- During corrections, evaluators ask for every detail of the applied configuration. If you just copy without understanding, I assure you will fail.
 - The use of this guide is at your own responsibility.
 - Good luck!
 
