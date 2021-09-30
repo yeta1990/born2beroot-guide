@@ -149,40 +149,21 @@ who -a
 
 ##change hostname
 
+
 two steps:
-1. change hostname
-```
-hostname [newname]
-```
-for example
-```
-hostname albgarci42
-```
-or 
-```
-hostname server2
-```
-
-check it with 
-```
-hostname
-```
-
-2. change /etc/hosts
+1. change /etc/hosts
 ```
 vi /etc/hosts
 ```
 and edit the line 127.0.1.1 to the correct one
 
-3. after panicking for 2 hours, i've found that it's also necessary to change the /etc/hostname file
+2. after panicking for 2 hours, i've found that it's also necessary to change the /etc/hostname file
 ```
 vi /etc/hostname
 ```
 and replacing the name for the one you chose
 
-##differences between apparmor and selinux
-[Stackexhange](https://security.stackexchange.com/questions/29378/comparison-between-apparmor-and-selinux)
-[Other](https://www.sololinux.es/apparmor-vs-selinux/)
-
-
-
+check it with 
+```
+hostname
+```
