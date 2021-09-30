@@ -8,8 +8,8 @@ Disclaimer:
 
 
 Users, SSH, etc. First steps: 
-Password policy: https://github.com/yeta1990/born2beroot-guide/blob/main/password-policy.md
-Sudo config: https://github.com/yeta1990/born2beroot-guide/blob/main/sudo-config.md
-Monitoring guide: https://github.com/yeta1990/born2beroot-guide/blob/main/monitoring.md
-Monitoring script: https://github.com/yeta1990/born2beroot-guide/blob/main/monitoring.sh
-Correction guide: https://github.com/yeta1990/born2beroot-guide/blob/main/correction.md
+- Password policy: https://github.com/yeta1990/born2beroot-guide/blob/main/password-policy.md
+- Sudo config: https://github.com/yeta1990/born2beroot-guide/blob/main/sudo-config.md
+- Monitoring guide: https://github.com/yeta1990/born2beroot-guide/blob/main/monitoring.md
+- Monitoring script: https://github.com/yeta1990/born2beroot-guide/blob/main/monitoring.sh
+- Correction guide: https://github.com/yeta1990/born2beroot-guide/blob/main/correction.md
