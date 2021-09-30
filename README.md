@@ -20,7 +20,7 @@ and reload:
 ```
 groupadd user42
 ```
-(alt + 124) to write a pipe
+
 
 ```
 adduser albgarci user42
@@ -46,7 +46,7 @@ to delete a specific user
 sudo deluser probandouser
 ```
 
-##ssh
+## ssh
 
 https://linuxhint.com/enable-ssh-server-debian/
 
@@ -54,17 +54,9 @@ https://linuxhint.com/enable-ssh-server-debian/
 sudo systemctl status ssh
 ```
 
-
-it's currently working on port 22
-
-to change ssh port from 22 to 4242:
+it's currently working on port 22. to change ssh port from 22 to 4242, edit config file:
 ```
-find / -name "sshd_config"
-```
-
-edit config file
-```
-sudo vi /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 change on line 15
