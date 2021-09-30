@@ -43,9 +43,9 @@ sudo chage -M 30 [user]
 sudo chage -m 2 [user]
 ```
 
+------
 
-
-The next rules are defined in /etc/pam.d/common-password
+Installing libpam-pwquality package is necessary to set next rules. When it's installed:
 ```
 nano /etc/pam.d/common-password
 ```
